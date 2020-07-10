@@ -28,7 +28,8 @@ describe("rootReducer", () => {
       name: 'Beans in a Bag',
       roast: 'dark',
       flavor: 'fruity',
-      price: '10.00',
+      price: 10,
+      stock: 18,
       id: 2
     }
     store.dispatch(action);

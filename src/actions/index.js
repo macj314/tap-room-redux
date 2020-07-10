@@ -8,13 +8,14 @@ export const deleteBag = id => ({
 });
 
 export const addBag = (bag) => {
-  const {name, roast, flavor, price, id} = bag
+  const {name, roast, flavor, price, stock, id} = bag
   return {
     type: 'ADD_BAG',
     name: name,
     roast: roast,
     flavor: flavor,
     price: price,
+    stock: stock,
     id: id
   }
 }

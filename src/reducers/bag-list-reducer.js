@@ -1,7 +1,7 @@
 import * as a from './../actions/ActionTypes';
 
 export default (state = {}, action) => {
-  const { name, roast, flavor, price, id } = action;
+  const { name, roast, flavor, price, stock, id } = action;
   switch (action.type) {
     case a.ADD_BAG:
     return Object.assign({}, state, {
@@ -10,6 +10,7 @@ export default (state = {}, action) => {
         roast: roast,
         flavor: flavor,
         price: price,
+        stock: stock,
         id: id
       }
     });

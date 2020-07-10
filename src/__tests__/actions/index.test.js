@@ -20,6 +20,7 @@ describe('form actions', () => {
       roast: 'light',
       flavor: 'Chocolate',
       price: 12.00,
+      stock: 18,
       id: 1
     })).toEqual({
       type: 'ADD_BAG',
@@ -27,6 +28,7 @@ describe('form actions', () => {
       roast: 'light',
       flavor: 'Chocolate',
       price: 12.00,
+      stock: 18,
       id: 1
     });
   })
