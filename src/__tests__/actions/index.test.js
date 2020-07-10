@@ -54,5 +54,26 @@ describe('form actions', () => {
       stock: 18,
       id: 1
     });
+  });
+
+  test('lowerStock should call LOWER_STOCK action', () => {
+    expect(actions.lowerStock({
+      name: 'Jays Mocha',
+      roast: 'light',
+      flavor: 'Chocolate',
+      price: 12.00,
+      capacity: 18,
+      stock: 18,
+      id: 1
+    })).toEqual({
+      type: 'LOWER_STOCK',
+      name: 'Jays Mocha',
+      roast: 'light',
+      flavor: 'Chocolate',
+      price: 12.00,
+      capacity: 18,
+      stock: 17.64,
+      id: 1
+    });
   });  
 })
