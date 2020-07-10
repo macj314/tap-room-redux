@@ -5,8 +5,10 @@ import BagControl from "./BagControl";
 function App(){
   return ( 
     <React.Fragment>
-      <Header />
-      <BagControl />
+      <div class="container">
+        <Header />
+        <BagControl/>
+      </div>
     </React.Fragment>
   );
 }
