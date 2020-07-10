@@ -21,7 +21,7 @@ export const addBag = (bag) => {
   }
 }
 
-export const restockedBag = (bag) => {
+export const restockBag = (bag) => {
   const {name, roast, flavor, price, capacity, id} = bag
   return {
     type: 'RESTOCK_BAG',

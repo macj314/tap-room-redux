@@ -33,5 +33,26 @@ describe('form actions', () => {
       stock: 18,
       id: 1
     });
-  })
+  });
+
+  test('restockBag should call RESTOCK_BAG action', () => {
+    expect(actions.restockBag({
+      name: 'Jays Mocha',
+      roast: 'light',
+      flavor: 'Chocolate',
+      price: 12.00,
+      capacity: 18,
+      stock: 0,
+      id: 1
+    })).toEqual({
+      type: 'RESTOCK_BAG',
+      name: 'Jays Mocha',
+      roast: 'light',
+      flavor: 'Chocolate',
+      price: 12.00,
+      capacity: 18,
+      stock: 18,
+      id: 1
+    });
+  });  
 })
