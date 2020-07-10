@@ -12,7 +12,6 @@ describe('bagListReducer', () => {
       id: 1
     },
     2:{
-      type: 'ADD_BAG',
       name: 'Beans in a Bag',
       roast: 'dark',
       flavor: 'fruity',
@@ -47,5 +46,16 @@ describe('bagListReducer', () => {
     });
   });
 
-  // test('')
+  test('Should delete a bag from masterBagList', () => {
+    const action = a.deleteBag(1);
+    expect(bagListReducer(currentState, action)).toEqual({
+      2:{
+        name: 'Beans in a Bag',
+        roast: 'dark',
+        flavor: 'fruity',
+        price: '10.00',
+        id: 2
+      }
+    });
+  });
 });

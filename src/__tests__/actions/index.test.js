@@ -28,6 +28,6 @@ describe('form actions', () => {
       flavor: 'Chocolate',
       price: 12.00,
       id: 1
-      });
+    });
   })
 })

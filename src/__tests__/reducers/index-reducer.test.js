@@ -29,7 +29,7 @@ describe("rootReducer", () => {
       roast: 'dark',
       flavor: 'fruity',
       price: '10.00',
-      id: 1
+      id: 2
     }
     store.dispatch(action);
     expect(store.getState().masterBagList).toEqual(bagListReducer(undefined, action));
