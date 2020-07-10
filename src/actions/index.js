@@ -21,8 +21,8 @@ export const addBag = (bag) => {
   }
 }
 
-export const restockBag = (bag) => {
-  const {name, roast, flavor, price, capacity, id} = bag
+export const restockBag = (bagToRestock) => {
+  const {name, roast, flavor, price, capacity, id} = bagToRestock
   return {
     type: 'RESTOCK_BAG',
     name: name,
@@ -35,8 +35,9 @@ export const restockBag = (bag) => {
   }
 }
 
-export const lowerStock = (bag) => {
-  const {name, roast, flavor, price, capacity, stock, id} = bag
+export const lowerStock = (bagToLowerStock) => {
+  const {name, roast, flavor, price, capacity, stock, id} = bagToLowerStock
+  console.log(stock);
   return {
     type: 'LOWER_STOCK',
     name: name,
@@ -44,7 +45,7 @@ export const lowerStock = (bag) => {
     flavor: flavor,
     price: price,
     capacity: capacity,
-    stock: stock - 0.36,
+    stock: Math.round((stock - 0.36) * 100) / 100,
     id: id
   }
 }

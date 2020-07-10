@@ -1,4 +1,4 @@
-import * as a from './../actions/ActionTypes';
+import * as a from '../actions/ActionTypes';
 
 export default (state = {}, action) => {
   const { name, roast, flavor, price, capacity, stock, id } = action;
@@ -24,7 +24,7 @@ export default (state = {}, action) => {
           flavor: flavor,
           price: price,
           capacity: capacity,
-          stock: stock - 0.36,
+          stock: Math.round((stock - 0.36) * 100) / 100,
           id: id
         }
       });
