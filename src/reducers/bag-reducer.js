@@ -24,7 +24,7 @@ export default (state = {}, action) => {
           flavor: flavor,
           price: price,
           capacity: capacity,
-          stock: Math.round((stock - 0.36) * 100) / 100,
+          stock: stock,
           id: id
         }
       });

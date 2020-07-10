@@ -37,7 +37,7 @@ export const restockBag = (bagToRestock) => {
 
 export const lowerStock = (bagToLowerStock) => {
   const {name, roast, flavor, price, capacity, stock, id} = bagToLowerStock
-  console.log(stock);
+  console.log(bagToLowerStock.stock);
   return {
     type: 'LOWER_STOCK',
     name: name,
