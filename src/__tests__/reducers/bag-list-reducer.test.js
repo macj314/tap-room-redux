@@ -9,6 +9,7 @@ describe('bagListReducer', () => {
       roast: 'light',
       flavor: 'Chocolate',
       price: 12.00,
+      capacity: 12,
       stock: 12,
       id: 1
     },
@@ -17,6 +18,7 @@ describe('bagListReducer', () => {
       roast: 'dark',
       flavor: 'fruity',
       price: 10,
+      capacity: 18,
       stock: 18,
       id: 2
     }
@@ -27,6 +29,7 @@ describe('bagListReducer', () => {
     roast: 'light',
     flavor: 'Chocolate',
     price: 12.00,
+    capacity: 12,
     stock: 12,
     id: 1
   };
@@ -36,7 +39,7 @@ describe('bagListReducer', () => {
   });
 
   test('Should add a new bag to masterBagList', () => {
-    const { name, roast, flavor, price, stock, id } = firstBag;
+    const { name, roast, flavor, price, capacity, stock, id } = firstBag;
     const action = a.addBag(firstBag);
     expect(bagListReducer({}, action)).toEqual({
       [id]: {
@@ -44,6 +47,7 @@ describe('bagListReducer', () => {
         roast: roast,
         flavor: flavor,
         price: price,
+        capacity: capacity,
         stock: stock,
         id: id
       }
@@ -58,6 +62,7 @@ describe('bagListReducer', () => {
         roast: 'dark',
         flavor: 'fruity',
         price: 10,
+        capacity: 18,
         stock: 18,
         id: 2
       }

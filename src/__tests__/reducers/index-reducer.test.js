@@ -29,6 +29,7 @@ describe("rootReducer", () => {
       roast: 'dark',
       flavor: 'fruity',
       price: 10,
+      capacity: 18,
       stock: 18,
       id: 2
     }
