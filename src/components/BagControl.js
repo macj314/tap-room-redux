@@ -15,6 +15,11 @@ class BagControl extends React.Component {
       formVisibleOnPage: false,
       selectedBag: null
     };
+    const bag1 = a.addBag({ name: 'Jays Mocha', roast: 'light', flavor: 'Chocolate', price: 12.00, capacity: 12, stock: 12, id: 1 });
+    const bag2 = a.addBag({       name: 'Beans in a Bag', roast: 'dark', flavor: 'fruity', price: 10, capacity: 18, stock: 18, id: 2 });
+    const { dispatch } = this.props;
+    dispatch(bag1);
+    dispatch(bag2);
   }
 
   handleClick = () => {
@@ -38,14 +43,14 @@ class BagControl extends React.Component {
 
   handleDeletingBag = (id) => {
    const { dispatch } = this.props;
-   const { action } = a.deleteBag(id);
+   const action = a.deleteBag(id);
    dispatch(action);
    this.setState({ selectedBag: null });
   }
 
   handleAddingNewBagToList = (newBag) => {
     const { dispatch } = this.props;
-    const { action } = a.addBag(newBag);
+    const action = a.addBag(newBag);
     dispatch(action);
     const action2 = a.toggleForm();
     dispatch(action2);
