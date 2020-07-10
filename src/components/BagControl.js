@@ -33,7 +33,7 @@ class BagControl extends React.Component {
 
   handleChangingSelectedBag = (id) => {
     const selectedBag = this.props.masterBagList[id];
-    this.setState({selectedBag: selectedBag});
+    this.setState({ selectedBag: selectedBag });
   }
 
   handleDeletingBag = (id) => {
@@ -88,11 +88,11 @@ class BagControl extends React.Component {
         // onClickingRestock = {this.handleRestockBag}
       />
       buttonText = "Return to Bag List";
-    } else if (this.state.formVisibleOnPage) {
+    } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState = <NewBagForm onNewBagCreation={this.handleAddingNewBagToList}  />;
       buttonText = "Return to Bag List";
     } else {
-      currentlyVisibleState = <BagList bagList={this.state.masterBagList} onBagSelection={this.handleChangingSelectedBag} />;
+      currentlyVisibleState = <BagList bagList={this.props.masterBagList} onBagSelection={this.handleChangingSelectedBag} />;
       buttonText = "Add Bag";
     }
     return (

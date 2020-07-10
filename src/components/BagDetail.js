@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { connect } from 'react-redux';
 
 function BagDetail(props){
   const { bag, onClickingDelete, onClickingBrewCoffee, onClickingRestock} = props;
@@ -9,7 +10,9 @@ function BagDetail(props){
       <h1>Coffee Bag Details</h1>
       <h3>Name: {bag.name}</h3>
       <h3>Roast: {bag.roast}</h3>
+      <h3>Flavor: {bag.flavor}</h3>
       <h4>Price: ${bag.price}</h4>
+      <h4>Size: {bag.capacity}oz bag</h4>
       <h4>Beans Remaining: {bag.stock}oz</h4>
       <p>Note: our brewing standard is: 0.36oz/6oz of coffee grounds/water</p>
       <button onClick={()=> onClickingBrewCoffee(bag.id) }>Brew A Cup of Coffee</button>
@@ -27,4 +30,11 @@ BagDetail.propTypes = {
   onClickingRestock: PropTypes.func
 };
 
+const mapStateToProps = state => {
+  return {
+    masterBagList: state.masterBagList
+  }
+}
+
+BagDetail = connect(mapStateToProps)(BagDetail);
 export default BagDetail;

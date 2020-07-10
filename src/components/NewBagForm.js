@@ -7,7 +7,14 @@ function NewBagForm(props){
 
   function handleNewBagFormSubmission(event) {
     event.preventDefault();
-    props.onNewBagCreation({name: event.target.name.value, roast: event.target.roast.value, price: event.target.price.value, stock: 12, id: v4()});
+    props.onNewBagCreation({
+      name: event.target.name.value,
+      roast: event.target.roast.value,
+      price: event.target.price.value,
+      capacity: 12,
+      stock: 12,
+      id: v4()
+    });
   }
 
   return (

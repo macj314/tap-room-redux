@@ -9,9 +9,9 @@ import { Provider } from "react-redux";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = createStore(rootReducer);
-store.subscribe(() =>
-  console.log(store.getState())
-);
+// store.subscribe(() =>
+//   console.log(store.getState())
+// );
 
 ReactDOM.render(
   <Provider store={store}>
