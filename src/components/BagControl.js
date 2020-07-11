@@ -16,7 +16,7 @@ class BagControl extends React.Component {
       selectedBag: null
     };
     const bag1 = a.addBag({ name: 'Jays Mocha', roast: 'light', flavor: 'Chocolate', price: 12.00, capacity: 12, stock: 12, id: 1 });
-    const bag2 = a.addBag({       name: 'Beans in a Bag', roast: 'dark', flavor: 'fruity', price: 10, capacity: 18, stock: 18, id: 2 });
+    const bag2 = a.addBag({ name: 'Beans in a Bag', roast: 'dark', flavor: 'fruity', price: 10, capacity: 18, stock: 18, id: 2 });
     const { dispatch } = this.props;
     dispatch(bag1);
     dispatch(bag2);
@@ -55,28 +55,6 @@ class BagControl extends React.Component {
     const action2 = a.toggleForm();
     dispatch(action2);
   }
-
-  // handleBrewCoffee = (id) => {
-  //   const selectedBag = this.state.masterBagList.filter(bag => bag.id === id)[0];
-  //   if (selectedBag.stock >= 0.36){
-  //     selectedBag.stock = Math.round((selectedBag.stock - 0.36) * 100) / 100;
-  //     const updatedList = this.state.masterBagList.filter(bag => bag.id !== this.state.selectedBag.id).concat(selectedBag);
-  //     this.setState({
-  //       masterBagList : updatedList
-  //     });
-  //   } 
-  // }
-
-  // handleRestockBag = (id) => {
-  //   const selectedBag = this.state.masterBagList.filter(bag => bag.id === id)[0];
-  //   if (selectedBag.stock < 12){
-  //     selectedBag.stock = 12;
-  //     const updatedList = this.state.masterBagList.filter(bag => bag.id !== this.state.selectedBag.id).concat(selectedBag);
-  //     this.setState({
-  //       masterBagList : updatedList
-  //     });
-  //   } 
-  // }
 
   render(){
     let currentlyVisibleState = null;

@@ -13,12 +13,14 @@ function BagList(props){
           name={bag.name}
           roast={bag.roast}
           price={bag.price}
-          capacity={bag.capacity}
+          // capacity={bag.capacity}
           stock={bag.stock}
           id={bag.id}
           key={bag.id}
         />
       })}
+              <h1>Test</h1>
+
     </React.Fragment>
   );
 }
